@@ -24,10 +24,10 @@ const useStyles = makeStyles({
     },
 });
 
-const MetricCard = (props: any) => {
+const MetricCard = (props) => {
     const classes = useStyles();
     const [metric, setMetric] = useState({ metric: '', unit: '', value: '' });
-    const filterByMetric = [props.liveData].find((m: any) => m.metric === props.info.value);
+    const filterByMetric = [props.liveData].find((m) => m.metric === props.info.value);
     const newValue = filterByMetric !== undefined ? filterByMetric : metric;
 
     useEffect(() => {

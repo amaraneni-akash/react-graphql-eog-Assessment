@@ -37,14 +37,11 @@ const metricSlice = createSlice({
     name: 'metrics',
     initialState,
     reducers: {
-        allMetricsDataRecevied: (state: { allMetrics: any }, action: PayloadAction<AllMeasurements>) => {
+        allMetricsDataRecevied: (state, action: PayloadAction<AllMeasurements>) => {
             const { getMetrics } = action.payload;
             state.allMetrics = getMetrics;
         },
-        multipleMeasurementsDataRecevied: (
-            state: { multipleMeasurements: any },
-            action: PayloadAction<MultipleMeasurementsTypes>,
-        ) => {
+        multipleMeasurementsDataRecevied: (state, action: PayloadAction<MultipleMeasurementsTypes>) => {
             state.multipleMeasurements = action.payload;
         },
         metricLiveDataRecevied: (state, action: PayloadAction<LiveMetricsTypes>) => {
@@ -54,7 +51,7 @@ const metricSlice = createSlice({
                 unit: m.unit,
             }))[0];
         },
-        metricsApiErrorReceived: (state: any, action: PayloadAction<ApiErrorAction>) => state,
+        metricsApiErrorReceived: (state, action: PayloadAction<ApiErrorAction>) => state,
     },
 });
 

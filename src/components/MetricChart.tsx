@@ -37,7 +37,7 @@ const useStyles = makeStyles({
 
 const groupTimeObject: Array<any> = [];
 let chartMetricData: Array<Object> = [];
-const seen: any = {};
+const seen = {};
 
 function mergeObjectsInUnique<T>(array: T[]): T[] {
     const newArray = new Map();
@@ -79,7 +79,7 @@ function groupByKey(array: any, key: string): void {
     chartMetricData = mergeObjectsInUnique(groupTimeObject);
 }
 
-const MetricChart: React.FC<Props> = (props: { data: any; liveData: any; selectedChartOptions: any }) => {
+const MetricChart: React.FC<Props> = (props) => {
     const classes = useStyles();
     const { data, liveData, selectedChartOptions } = props;
     useEffect(() => {

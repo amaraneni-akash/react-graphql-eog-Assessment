@@ -37,5 +37,6 @@ module.exports = {
         'import/extensions': 0,
         'no-use-before-define': 'off',
         'jsx-quotes': [2, 'prefer-single'],
+        'react/prop-types': 0,
     },
 };

@@ -85,7 +85,7 @@ const EOGMetrics = () => {
         query: queryMultipleMeasurements,
         variables: {
             // We could also just fetch the metrics the user needs combining the selectedChartOptions hooks
-            input: allMetrics.map((metricName: any) => ({
+            input: allMetrics.map((metricName) => ({
                 metricName,
                 after: currentTime - passTime,
                 before: currentTime,
@@ -96,7 +96,7 @@ const EOGMetrics = () => {
         query: queryMetricSubscription,
     });
 
-    const handleChange = (selectedOption: any) => {
+    const handleChange = (selectedOption) => {
         setSelectedChartsOptions(selectedOption === null ? [] : selectedOption);
     };
 
@@ -159,7 +159,7 @@ const EOGMetrics = () => {
                 </Grid>
             </Container>
             <Grid container spacing={1} className={classes.select}>
-                {selectedChartOptions?.map((c: any, i: any) => {
+                {selectedChartOptions?.map((c, i) => {
                     return (
                         <Grid key={i} item xs={2}>
                             <CardCharts info={c} liveData={resultsLiveMetrics.data.newMeasurement} />
